@@ -1,0 +1,905 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Rohith Abhi | Ethical Hacker & Cybersecurity Enthusiast</title>
+
+  <meta
+    name="description"
+    content="Rohith Abhi (Panda) is a self-taught Ethical Hacker, Web Developer, and Cybersecurity Enthusiast specializing in web security, vulnerability assessment, penetration testing, Linux, and secure web development."
+  >
+
+  <meta name="author" content="Rohith Abhi">
+
+  <meta
+    name="robots"
+    content="index, follow, max-image-preview:large"
+  >
+
+  <meta name="theme-color" content="#05000a">
+
+  <link
+    rel="canonical"
+    href="https://rohithabhi.github.io/portfolio/"
+  >
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Rohith Abhi | Ethical Hacker & Cybersecurity Enthusiast">
+  <meta
+    property="og:description"
+    content="Official portfolio of Rohith Abhi (Panda), Ethical Hacker, Web Developer and Cybersecurity Enthusiast."
+  >
+  <meta
+    property="og:url"
+    content="https://rohithabhi.github.io/portfolio/"
+  >
+  <meta property="og:site_name" content="Rohith Abhi">
+  <meta
+    property="og:image"
+    content="https://rohithabhi.github.io/portfolio/panda-hacker.jpg"
+  >
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta
+    name="twitter:title"
+    content="Rohith Abhi | Ethical Hacker & Cybersecurity Enthusiast"
+  >
+  <meta
+    name="twitter:description"
+    content="Official portfolio of Rohith Abhi (Panda)."
+  >
+  <meta
+    name="twitter:image"
+    content="https://rohithabhi.github.io/portfolio/panda-hacker.jpg"
+  >
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- Font -->
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Person Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Rohith Abhi",
+    "alternateName": "Panda",
+    "url": "https://rohithabhi.github.io/portfolio/",
+    "jobTitle": "Ethical Hacker, Web Developer & Cybersecurity Enthusiast",
+    "description": "Self-taught Ethical Hacker, Web Developer and Cybersecurity Enthusiast specializing in web security, vulnerability assessment, penetration testing and secure web development.",
+    "sameAs": [
+      "https://github.com/rohithabhi",
+      "https://www.linkedin.com/in/rohith-abhi/",
+      "https://www.instagram.com/rohith__abhi"
+    ],
+    "knowsAbout": [
+      "Cybersecurity",
+      "Ethical Hacking",
+      "Web Security",
+      "Penetration Testing",
+      "Vulnerability Assessment",
+      "Linux",
+      "Web Development",
+      "Rust",
+      "C++",
+      "Haskell",
+      "Prolog"
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #050008;
+      --panel: rgba(255, 255, 255, 0.055);
+      --border: rgba(255, 255, 255, 0.12);
+      --cyan: #00f0ff;
+      --green: #00ffaa;
+      --purple: #c084fc;
+      --purple-dark: #9333ea;
+      --text: #ffffff;
+      --muted: #a7a7a7;
+      --max-width: 1050px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+
+    body {
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Fira Code", monospace;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    /* Background */
+
+    #particles-js {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      background:
+        radial-gradient(
+          circle at 10% 10%,
+          #300052 0%,
+          #10001f 38%,
+          #050008 75%
+        );
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+      background:
+        linear-gradient(
+          rgba(255,255,255,0.015) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,0.015) 1px,
+          transparent 1px
+        );
+      background-size: 45px 45px;
+      mask-image: linear-gradient(to bottom, black, transparent);
+    }
+
+    /* Navigation */
+
+    #menu-toggle {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+      z-index: 1001;
+      border: 1px solid rgba(0,240,255,0.25);
+      border-radius: 10px;
+      background: rgba(0,0,0,0.55);
+      backdrop-filter: blur(12px);
+    }
+
+    #menu-toggle span {
+      width: 24px;
+      height: 3px;
+      border-radius: 3px;
+      background: var(--cyan);
+      box-shadow: 0 0 8px rgba(0,240,255,0.5);
+    }
+
+    #sidebar {
+      position: fixed;
+      top: 0;
+      left: -280px;
+      width: 270px;
+      height: 100vh;
+      padding-top: 90px;
+      background: rgba(4, 0, 8, 0.94);
+      backdrop-filter: blur(18px);
+      border-right: 1px solid var(--border);
+      transition: left 0.3s ease;
+      z-index: 1000;
+    }
+
+    #sidebar.open {
+      left: 0;
+    }
+
+    #sidebar ul {
+      list-style: none;
+    }
+
+    #sidebar li {
+      padding: 5px 25px;
+    }
+
+    #sidebar a {
+      display: block;
+      padding: 13px 15px;
+      color: var(--cyan);
+      text-decoration: none;
+      border-radius: 10px;
+      transition: 0.25s ease;
+    }
+
+    #sidebar a:hover {
+      color: #fff;
+      background: rgba(0,240,255,0.08);
+      box-shadow: inset 0 0 20px rgba(0,240,255,0.04);
+    }
+
+    /* Main */
+
+    main {
+      width: min(100% - 32px, var(--max-width));
+      margin: auto;
+    }
+
+    section {
+      min-height: auto;
+      padding: 90px 0 40px;
+    }
+
+    /* Hero */
+
+    #home {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding-top: 50px;
+    }
+
+    .avatar {
+      width: 155px;
+      height: 155px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid var(--green);
+      box-shadow:
+        0 0 15px rgba(0,255,170,0.5),
+        0 0 45px rgba(0,255,170,0.15);
+      margin-bottom: 28px;
+    }
+
+    .typing-box {
+      min-height: 60px;
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      font-weight: 700;
+    }
+
+    .neon-text {
+      color: var(--cyan);
+      text-shadow:
+        0 0 5px rgba(0,240,255,0.8),
+        0 0 15px rgba(0,240,255,0.4);
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 3px;
+      height: 1em;
+      margin-left: 6px;
+      vertical-align: middle;
+      background: var(--cyan);
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%, 45% {
+        opacity: 1;
+      }
+
+      50%, 100% {
+        opacity: 0;
+      }
+    }
+
+    .hero-greeting {
+      margin-top: 20px;
+    }
+
+    .hero-greeting .hello {
+      color: var(--green);
+      font-size: clamp(1.2rem, 3vw, 1.5rem);
+    }
+
+    .hero-greeting .panda {
+      margin-top: 4px;
+      color: var(--purple);
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
+      font-weight: 700;
+    }
+
+    .tagline {
+      max-width: 700px;
+      margin: 20px auto 0;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    /* Panels */
+
+    .glass-panel {
+      width: 100%;
+      padding: clamp(24px, 5vw, 42px);
+      margin: 30px auto;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      backdrop-filter: blur(15px);
+      box-shadow: 0 0 40px rgba(147,51,234,0.08);
+    }
+
+    .section-title {
+      margin-bottom: 20px;
+      color: var(--cyan);
+      font-size: clamp(1.6rem, 4vw, 2.1rem);
+    }
+
+    .about-text {
+      color: #e4e4e4;
+    }
+
+    .about-text p + p {
+      margin-top: 18px;
+    }
+
+    .hacker-img {
+      display: block;
+      width: 100%;
+      max-height: 500px;
+      object-fit: cover;
+      margin-top: 30px;
+      border-radius: 16px;
+      border: 1px solid rgba(0,255,170,0.2);
+      box-shadow: 0 0 25px rgba(0,255,170,0.12);
+    }
+
+    /* Skills */
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 25px;
+    }
+
+    .skill {
+      padding: 8px 14px;
+      border: 1px solid rgba(192,132,252,0.35);
+      border-radius: 999px;
+      color: var(--purple);
+      background: rgba(192,132,252,0.05);
+      font-size: 0.85rem;
+    }
+
+    /* Contact */
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    .contact-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 130px;
+      padding: 11px 18px;
+      color: var(--cyan);
+      text-decoration: none;
+      border: 1px solid rgba(0,240,255,0.3);
+      border-radius: 10px;
+      background: rgba(0,240,255,0.035);
+      transition: 0.25s ease;
+    }
+
+    .contact-links a:hover {
+      color: #000;
+      background: var(--cyan);
+      box-shadow: 0 0 20px rgba(0,240,255,0.35);
+      transform: translateY(-2px);
+    }
+
+    /* Footer */
+
+    footer {
+      padding: 50px 20px 30px;
+      text-align: center;
+      color: #777;
+      font-size: 0.85rem;
+    }
+
+    footer strong {
+      color: var(--purple);
+    }
+
+    /* Responsive */
+
+    @media (max-width: 600px) {
+      main {
+        width: min(100% - 20px, var(--max-width));
+      }
+
+      section {
+        padding-top: 70px;
+      }
+
+      #home {
+        padding-top: 30px;
+      }
+
+      .avatar {
+        width: 125px;
+        height: 125px;
+      }
+
+      .glass-panel {
+        padding: 22px;
+        border-radius: 16px;
+      }
+
+      .contact-links {
+        flex-direction: column;
+      }
+
+      .contact-links a {
+        width: 100%;
+      }
+
+      .tagline {
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="particles-js" aria-hidden="true"></div>
+
+  <!-- Menu -->
+  <button
+    id="menu-toggle"
+    type="button"
+    aria-label="Open navigation menu"
+    aria-controls="sidebar"
+    aria-expanded="false"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav id="sidebar" aria-label="Main navigation">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- Hero -->
+    <section id="home">
+
+      <img
+        class="avatar"
+        src="your-selfie.jpg"
+        alt="Rohith Abhi, also known as Panda"
+        width="155"
+        height="155"
+        loading="eager"
+      >
+
+      <div class="typing-box" aria-label="Panda">
+        <span id="typed-text" class="neon-text"></span>
+        <span class="cursor" aria-hidden="true"></span>
+      </div>
+
+      <div class="hero-greeting">
+        <p class="hello">
+          Hi There! 👋🏻
+        </p>
+
+        <p class="panda">
+          I'M PANDA
+        </p>
+      </div>
+
+      <p class="tagline">
+        Ethical Hacker &nbsp;|&nbsp;
+        Cybersecurity Enthusiast &nbsp;|&nbsp;
+        Web Developer
+      </p>
+
+    </section>
+
+    <!-- About -->
+    <section id="about">
+
+      <article class="glass-panel">
+
+        <h1 class="section-title">
+          About Me
+        </h1>
+
+        <div class="about-text">
+
+          <p>
+            Hello! I'm <strong>Rohith Abhi</strong>, also known as
+            <strong>Panda</strong>. I'm a self-taught
+            <strong>Ethical Hacker, Web Developer, and Cybersecurity Enthusiast</strong>
+            passionate about building secure, scalable, and innovative digital solutions.
+          </p>
+
+          <p>
+            I specialize in vulnerability assessment, ethical security testing,
+            web application security, penetration testing, and developing modern
+            websites with a strong focus on security, performance, and clean code.
+          </p>
+
+          <p>
+            I continuously expand my knowledge in cybersecurity, software engineering,
+            Linux, networking, and programming languages including
+            <strong>Rust, Haskell, C++, and Prolog</strong>.
+          </p>
+
+        </div>
+
+        <img
+          class="hacker-img"
+          src="panda-hacker.jpg"
+          alt="Panda cybersecurity themed artwork"
+          loading="lazy"
+          width="800"
+          height="450"
+        >
+
+      </article>
+
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+
+      <article class="glass-panel">
+
+        <h2 class="section-title">
+          Skills & Interests
+        </h2>
+
+        <div class="skills">
+          <span class="skill">Cybersecurity</span>
+          <span class="skill">Ethical Hacking</span>
+          <span class="skill">Web Security</span>
+          <span class="skill">Penetration Testing</span>
+          <span class="skill">Vulnerability Assessment</span>
+          <span class="skill">Linux</span>
+          <span class="skill">Web Development</span>
+          <span class="skill">Rust</span>
+          <span class="skill">C++</span>
+          <span class="skill">Haskell</span>
+          <span class="skill">Prolog</span>
+          <span class="skill">Networking</span>
+        </div>
+
+      </article>
+
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+
+      <article class="glass-panel">
+
+        <h2 class="section-title">
+          Contact Me
+        </h2>
+
+        <p>
+          Want to connect, collaborate, or discuss cybersecurity and
+          web development? Find me here:
+        </p>
+
+        <div class="contact-links">
+
+          <a
+            href="mailto:ahanrohith123@gmail.com"
+            aria-label="Send email to Rohith Abhi"
+          >
+            Gmail
+          </a>
+
+          <a
+            href="https://www.instagram.com/rohith__abhi"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Rohith Abhi on Instagram"
+          >
+            Instagram
+          </a>
+
+          <a
+            href="https://wa.me/919946605328?text=Hey%20%F0%9F%91%8B%F0%9F%8F%BB"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Contact Rohith Abhi on WhatsApp"
+          >
+            WhatsApp
+          </a>
+
+          <a
+            href="https://github.com/rohithabhi"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Rohith Abhi on GitHub"
+          >
+            GitHub
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/rohith-abhi/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Rohith Abhi on LinkedIn"
+          >
+            LinkedIn
+          </a>
+
+        </div>
+
+      </article>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <strong>Designed and Developed by Panda</strong>
+    <br>
+    Copyright © 2025 Rohith Abhi
+  </footer>
+
+  <!-- Particles -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+
+  <script>
+    /* Particles */
+
+    if (window.particlesJS) {
+      particlesJS("particles-js", {
+        particles: {
+          number: {
+            value: 70,
+            density: {
+              enable: true,
+              value_area: 900
+            }
+          },
+
+          color: {
+            value: "#ffffff"
+          },
+
+          shape: {
+            type: "circle"
+          },
+
+          opacity: {
+            value: 0.35,
+            random: true
+          },
+
+          size: {
+            value: 2,
+            random: true
+          },
+
+          move: {
+            enable: true,
+            speed: 0.7
+          }
+        },
+
+        interactivity: {
+          events: {
+            onhover: {
+              enable: true,
+              mode: "repulse"
+            },
+
+            onclick: {
+              enable: true,
+              mode: "push"
+            }
+          },
+
+          modes: {
+            repulse: {
+              distance: 100
+            },
+
+            push: {
+              particles_nb: 3
+            }
+          }
+        },
+
+        retina_detect: true
+      });
+    }
+
+
+    /* Typing Animation */
+
+    const names = [
+      "Panda",
+      "P4nda",
+      "PΛИDΛ",
+      "𝙿𝙰𝙽𝙳𝙰",
+      "ＰＡＮＤＡ"
+    ];
+
+    const textEl = document.getElementById("typed-text");
+
+    let nameIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
+
+    function typeEffect() {
+
+      const currentName = names[nameIndex];
+
+      if (!deleting) {
+
+        charIndex++;
+
+        textEl.textContent =
+          currentName.substring(0, charIndex);
+
+        if (charIndex === currentName.length) {
+
+          deleting = true;
+
+          setTimeout(typeEffect, 1400);
+
+        } else {
+
+          setTimeout(typeEffect, 110);
+        }
+
+      } else {
+
+        charIndex--;
+
+        textEl.textContent =
+          currentName.substring(0, charIndex);
+
+        if (charIndex === 0) {
+
+          deleting = false;
+
+          nameIndex =
+            (nameIndex + 1) % names.length;
+
+          setTimeout(typeEffect, 350);
+
+        } else {
+
+          setTimeout(typeEffect, 55);
+        }
+      }
+    }
+
+    typeEffect();
+
+
+    /* Navigation */
+
+    const sidebar =
+      document.getElementById("sidebar");
+
+    const toggle =
+      document.getElementById("menu-toggle");
+
+    toggle.addEventListener("click", function () {
+
+      const isOpen =
+        sidebar.classList.toggle("open");
+
+      toggle.setAttribute(
+        "aria-expanded",
+        isOpen ? "true" : "false"
+      );
+    });
+
+
+    /* Close after navigation */
+
+    document
+      .querySelectorAll("#sidebar a")
+      .forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+          sidebar.classList.remove("open");
+
+          toggle.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+        });
+      });
+
+
+    /* Close when clicking outside */
+
+    document.addEventListener("click", function (event) {
+
+      if (
+        !sidebar.contains(event.target) &&
+        !toggle.contains(event.target) &&
+        sidebar.classList.contains("open")
+      ) {
+
+        sidebar.classList.remove("open");
+
+        toggle.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+      }
+    });
+  </script>
+
+</body>
+</html>
+```
